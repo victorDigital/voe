@@ -100,13 +100,13 @@
 			</span>
 		{/each}
 	</div>
-	<div class="sr-only flex justify-start gap-4 font-title">
+	<!-- 	<div class="flex justify-start gap-4 sr-only font-title">
 		<a href="/" class="text-2xl">Forside</a>
 		<span>/</span>
 		<a href="/about" class="text-2xl">Om</a>
 		<span>/</span>
 		<a href="/projects" class="text-2xl">Projekter</a>
-	</div>
+	</div> -->
 </div>
 
 <ModeWatcher />
