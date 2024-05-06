@@ -30,6 +30,8 @@
   },
   "type": "module",
   "dependencies": {
+    "@sveltejs/enhanced-img": "^0.2.0",
+    "bits-ui": "^0.21.7",
     "clsx": "^2.1.0",
     "lucide-svelte": "^0.368.0",
     "mode-watcher": "^0.3.0",

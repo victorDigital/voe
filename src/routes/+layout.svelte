@@ -3,22 +3,36 @@
 	import { ModeWatcher, setMode } from 'mode-watcher';
 	setMode('light');
 
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 	import { flip } from 'svelte/animate';
 
 	import { crossfade, fade } from 'svelte/transition';
 	import { quintInOut, quintOut } from 'svelte/easing';
 
-	let showFullName = false;
+	let isPageAtTop = true;
+	let showFullName = !isPageAtTop;
+	let timeoutId: number | null = null;
+
+	function debounce(func: Function, delay: number) {
+		if (timeoutId) {
+			clearTimeout(timeoutId);
+		}
+		timeoutId = setTimeout(func, delay);
+	}
 
 	onMount(() => {
-		if (window.innerWidth > 600) {
-			setTimeout(() => {
-				showFullName = true;
-			}, 2000);
-		} else showFullName = true;
+		window.addEventListener('scroll', () => {
+			console.log('isPageAtTop', window.scrollY);
+			debounce(() => {
+				isPageAtTop = window.scrollY < 100;
+				if (isPageAtTop) {
+					showFullName = false;
+				} else {
+					showFullName = true;
+				}
+			}, 600);
+		});
 	});
-
 	let logoText: { char: string; id: string }[] = [];
 	$: if (showFullName) {
 		console.log('showFullName', showFullName);
@@ -71,8 +85,10 @@
 	});
 </script>
 
-<div class="mx-8 flex h-20 items-center justify-between gap-4">
-	<div class="font-title flex gap-0 text-3xl">
+<div
+	class="fixed top-0 flex h-20 w-full items-center justify-between gap-4 border-b-[1px] border-black bg-background/50 px-8 filter backdrop-blur-md"
+>
+	<div class="flex gap-0 font-title text-3xl">
 		{#each logoText as { char, id }, i (id)}
 			<span
 				in:receive={{ key: id, delay: i * 30 + 200 }}
@@ -84,7 +100,7 @@
 			</span>
 		{/each}
 	</div>
-	<div class="font-title flex justify-start gap-4">
+	<div class="sr-only flex justify-start gap-4 font-title">
 		<a href="/" class="text-2xl">Forside</a>
 		<span>/</span>
 		<a href="/about" class="text-2xl">Om</a>
