@@ -18,7 +18,7 @@
 	<div class="grid grid-cols-1 gap-8 *:h-full md:grid-cols-2 xl:grid-cols-3">
 		<div class="flex flex-col justify-between gap-4">
 			<div class="flex flex-col gap-4">
-				<h3 class="font-title text-3xl">BetterLectio</h3>
+				<h2 class="font-title text-3xl">BetterLectio</h2>
 				<p class="text-pretty font-body text-xl">
 					BetterLectio er den ultimative forberedelse af Lectio. Et program det bruges af mange
 					gymnasier. BetterLectio har opnået stor succes og har over 400 brugere på over 60 skoler.
@@ -33,7 +33,7 @@
 		</div>
 		<div class="flex flex-col justify-between gap-4">
 			<div class="flex flex-col gap-4">
-				<h3 class="font-title text-3xl">Simple-SaaS</h3>
+				<h2 class="font-title text-3xl">Simple-SaaS</h2>
 				<p class="text-pretty font-body text-xl">
 					Sveltekit drevet SaaS platform, der gør det nemt at oprette og administrere abonnementer.
 					bruger Supabase, Stripe og MobilePay samt mange andre moderne teknologier.
@@ -45,7 +45,7 @@
 		</div>
 		<div class="flex flex-col justify-between gap-4">
 			<div class="flex flex-col gap-4">
-				<h3 class="font-title text-3xl">ProcessingWeb</h3>
+				<h2 class="font-title text-3xl">ProcessingWeb</h2>
 				<p class="text-pretty font-body text-xl">
 					Processing for the web, processingWeb er en webbaseret platform til at skabe og dele
 					interaktive skitser. Baseret på processing-sproget. Udviklet med Moderne Webteknologier,
