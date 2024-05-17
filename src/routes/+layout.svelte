@@ -88,7 +88,7 @@
 <div
 	class="fixed top-0 flex h-20 w-full items-center justify-between gap-4 border-b-[1px] border-black bg-background/50 px-8 filter backdrop-blur-md"
 >
-	<div class="flex gap-0 font-title text-3xl">
+	<a class="flex gap-0 font-title text-3xl" href="/">
 		{#each logoText as { char, id }, i (id)}
 			<span
 				in:receive={{ key: id, delay: i * 30 + 200 }}
@@ -99,7 +99,7 @@
 				{char}
 			</span>
 		{/each}
-	</div>
+	</a>
 	<!-- 	<div class="flex justify-start gap-4 sr-only font-title">
 		<a href="/" class="text-2xl">Forside</a>
 		<span>/</span>
